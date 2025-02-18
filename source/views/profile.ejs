@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+    <link rel="stylesheet" href="/styles/general.css">
+    <link rel="stylesheet" href="/styles/pages.css">
+    <script src="/scripts/general.js" defer></script>
+    <script src="/scripts/pages.js" defer></script>
+    <script src="/scripts/profile.js" defer></script>
+    <title>APT Trang cá nhân</title>
+</head>
+<body>
+    <div id="page-loader">
+        <img src="/images/page-loader.gif" alt="">
+    </div>
+    <div id="top" style="position: absolute; top: 0;"></div>
+    <div class="left-silde">
+        <a href="#top"><img src="/images/APT-logo.png" alt="" class="left-silde__main-logo"></a>
+        <div class="left-side__menu">
+            <div class="menu__item" onclick="location.href='/home'"><i class="fa-regular fa-house"></i>Trang chủ</div>
+            <div class="menu__item --selected"><i class="fa-regular fa-user"></i>Trang cá nhân</div>
+        </div>
+    </div>
+    <div class="search-bar">
+        <input class="search-bar__input" type="search" placeholder="Tên đăng nhập">
+        <i class="fa-regular fa-magnifying-glass search-bar__icon"></i>
+        <div class="search-bar__result"></div>
+    </div>
+    <div class="profile">
+        <div class="profile__full-name"><%= currentUser.fullName %></div>
+        <div class="profile__log-out-btn" onclick="window.location.href='/'">Đăng xuất</div>
+    </div>
+    <div class="create-post">
+        <p class="post__title">Bài viết của bạn</p>
+        <textarea class="post__content-reader" placeholder="Bạn đang nghĩ gì?"></textarea>
+        <div class="post__photo-preview">
+            <img src="" alt="" class="photo-preview__thumbnail">
+            <i class="fa-regular fa-trash-can photo-preview__delete"></i>
+        </div>
+        <div class="post__photo-reader"><i class="fa-regular fa-image"></i>Chia sẻ khoảnh khắc của bạn</div>
+        <input type="file" name="photo">
+        <div class="post__post-btn" onclick="createPost()">Chia sẻ</div>
+    </div>
+    <div class="feed --profile-feed">
+        <% for (let i = posts.length - 1; i >= 0; i--) { %>
+            <div class="feed__post" post-id="<%= posts[i]._id %>" post-noLike="<%= posts[i].noLike %>" >
+                <div class="post__head">
+                    <div class="head__auth-name"><%= currentUser.username %></div>
+                    <i class="fa-regular fa-trash-can head__post-del" onclick="deletePost(this)"></i>
+                </div>
+                <div class="post__time"><%= posts[i].time %></div>
+                <div class="post__content"><%= posts[i].content %></div>
+                <img class="post__photo" src="<%= posts[i].photoUrl %>" alt="">
+                <i class="<%= currentUser.postsLiked.includes(posts[i]._id)?'fa-solid':'fa-regular' %> fa-heart post__react" onclick="likePost(this)"></i>
+                <p class="post__no-like"><%= posts[i].noLike %> lượt thích</p>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

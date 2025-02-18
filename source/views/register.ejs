@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/general.css">
+    <link rel="stylesheet" href="/styles/acc-form.css">
+    <script src="/scripts/general.js" defer></script>
+    <script src="/scripts/acc-form.js" defer></script>
+    <title>APT Đăng ký</title>
+</head>
+<body>
+    <div id="page-loader">
+        <img src="/images/page-loader.gif" alt="">
+    </div>
+    <main>
+        <div class="title">
+            <img src="/images/APT-logo.png" alt="APT-logo" class="title__logo">
+            <p class="title__description">Always - Popular - Trending</p>
+    
+        </div>
+        <div class="form">
+            <p class="form__title">ĐĂNG KÝ</p>
+            <input class="form__input" type="full-name" id="register-full-name" placeholder="Họ và tên">
+            <input class="form__input" type="email" id="register-email" placeholder="Email">
+            <input class="form__input" type="text" id="register-username" placeholder="Tên đăng nhập">
+            <input class="form__input" type="password" id="register-password" placeholder="Mật khẩu">
+            <div class="form__password-shower" onclick="showPassword()">
+                <input type="checkbox" id="check-to-show" onclick="showPassword()"> Hiển thị mật khẩu
+            </div>
+            <input class="form__input" type="password" id="confirm-password" placeholder="Nhập lại mật khẩu">
+            <button class="form__submit-button" onclick="register()">ĐĂNG KÝ</button>
+            <p class="form__nav">
+                Bạn đã có tài khoản?
+                <a href="/" class="nav-link">Đăng nhập</a>
+            </p>
+        </div>
+    </main>
+    <footer>
+        <div class="left-side">
+            <strong>TÁC GIẢ</strong>
+            <p>Nguyễn Thanh Sang</p>
+            <p>B2205903</p>
+        </div>
+        <div class="right-side">
+            <strong>LIÊN HỆ</strong>
+            <p>sangb2205903@student.ctu.edu.vn</p>
+            <p>sangnt6604@gmail.com</p>
+        </div>
+    </footer>
+</body>
+</html>
