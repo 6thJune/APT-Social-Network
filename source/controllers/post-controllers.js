@@ -19,7 +19,6 @@ postController.post('/profile/create-post', upload.single('photo'), async (req, 
         const photoUrl = photo.path;
         newPost = new Post({ userId: auth._id, username: auth.username, content, photoUrl });
         await newPost.save();
-
         return res.status(201).json({ success: true, photoUrl });
     } catch (error) {
         return res.status(500).json({ message: error.message });

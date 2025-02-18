@@ -24,9 +24,10 @@ thumbnailDel.addEventListener('click', () => {
     photoPreview.style.display = 'none';
     input.value = '';
 })
-
 // Create post
 async function createPost() {
+    document.querySelector('body').style.overflow = 'hidden';
+    document.getElementById('page-loader').style.display = 'flex';
     const content = document.querySelector('.post__content-reader').value;
     const photo = document.querySelector('input[name=photo]').files[0];
     const formData = new FormData();
@@ -37,14 +38,19 @@ async function createPost() {
         body: formData
     })
     const result = await res.json();
-    if (result.success)
+    if (result.success) {
+        document.querySelector('body').style.overflow = 'unset';
+        document.getElementById('page-loader').style.display = 'none';
         location.reload();
+    }
     else
         alert(result.message);
 }
 
 // Delete post
 async function deletePost(elm) {
+    document.querySelector('body').style.overflow = 'hidden';
+    document.getElementById('page-loader').style.display = 'flex';
     const postId = elm.closest('.feed__post').getAttribute('post-id');
     const res = await fetch('/profile/delete-post', {
         method: 'POST',
@@ -52,6 +58,9 @@ async function deletePost(elm) {
         body: JSON.stringify({ postId })
     })
     const result = await res.json();
-    if (result.success)
+    if (result.success) {
+        document.querySelector('body').style.overflow = 'unset';
+        document.getElementById('page-loader').style.display = 'none';
         location.reload();
+    }
 }
