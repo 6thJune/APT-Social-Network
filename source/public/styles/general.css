@@ -38,7 +38,8 @@ html {
 }
 
 #page-loader img {
-    width: 6%;
+    width: 4%;
+    margin-bottom: 6px;
 }
 
 #page-loader p {
