@@ -41,7 +41,7 @@ postController.post('/profile/delete-post', async (req, res) => {
         await Post.findByIdAndDelete(postId);
         return res.status(201).json({ success: true });
     } catch (error) {
-        return console.log(error.message)
+        return res.status(500).json({ message: error.message });
     }
 })
 
