@@ -34,8 +34,8 @@ postController.post('/profile/delete-post', async (req, res) => {
             const parts = post.photoUrl.split('/');
             const photoName = parts[parts.length - 1].split('.')[0];
             const folderName = parts[parts.length - 2];
-            const cloudinaryPath = `${folderName}/${photoName}`;
-            await cloudinary.uploader.destroy(cloudinaryPath);
+            const publicId = `${folderName}/${photoName}`;
+            await cloudinary.uploader.destroy(publicId);
         }
         await Post.findByIdAndDelete(postId);
         return res.status(201).json({ success: true });

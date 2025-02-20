@@ -1,11 +1,10 @@
 // Đăng ký
 async function register() {
     const fullName = document.getElementById('register-full-name').value;
-    const email = document.getElementById('register-email').value;
     const username = document.getElementById('register-username').value;
     const password = document.getElementById('register-password').value;
     const confirmPassword = document.getElementById('confirm-password').value;
-    if (!fullName || !email || !username || !password || !confirmPassword) {
+    if (!fullName || !username || !password || !confirmPassword) {
         alert('Vui lòng nhập đầy đủ thông tin!')
         return;
     }
@@ -16,7 +15,7 @@ async function register() {
     const res = await fetch('/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ fullName, email, username, password })
+        body: JSON.stringify({ fullName, username, password })
     })
     const result = await res.json();
     alert(result.message);

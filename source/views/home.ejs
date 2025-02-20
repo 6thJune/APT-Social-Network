@@ -20,12 +20,15 @@
         <div class="left-side__menu">
             <div class="menu__item --selected"><i class="fa-regular fa-house"></i>Trang chủ</div>
             <div class="menu__item" onclick="location.href='/profile'"><i class="fa-regular fa-user"></i>Trang cá nhân</div>
+            <div class="menu__item"><i class="fa-regular fa-gear"></i>Cài đặt</div>
         </div>
     </div>
-    <div class="search-bar">
-        <input class="search-bar__input" type="search" placeholder="Tên đăng nhập">
-        <i class="fa-regular fa-magnifying-glass search-bar__icon"></i>
-        <div class="search-bar__result"></div>
+    <div class="search-container">
+        <div class="search__search-bar">
+            <i class="search-bar__icon fa-regular fa-magnifying-glass"></i>
+            <input class="search-bar__input" type="search" placeholder="Tên đăng nhập">
+        </div>
+        <div class="search__result"></div>
     </div>
     <div class="feed --home-feed">
         <% if(posts.length == 0) { %>
@@ -38,10 +41,10 @@
                     <div class="head__auth-name"><%= posts[i].username %></div>
                 </div>
                 <div class="post__time"><%= posts[i].time %></div>
-                <div class="post__content"><%= posts[i].content %></div>
                 <img class="post__photo" src="<%= posts[i].photoUrl %>" alt="">
                 <i class="<%= currentUser.postsLiked.includes(posts[i]._id)?'fa-solid':'fa-regular' %> fa-heart post__react" onclick="likePost(this)"></i>
                 <p class="post__no-like"><%= posts[i].noLike %> lượt thích</p>
+                <div class="post__content"><%= posts[i].content %></div>
             </div>
         <% } %>
     </div>

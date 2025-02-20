@@ -12,7 +12,7 @@ async function likePost(elm) {
 }
 
 // Search
-const searchResult = document.querySelector('.search-bar__result');
+const searchResult = document.querySelector('.search__result');
 const searchBar = document.querySelector('.search-bar__input');
 searchBar.addEventListener('input', async () => {
     let searchContent = searchBar.value;
