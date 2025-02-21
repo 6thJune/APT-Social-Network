@@ -16,20 +16,32 @@
         <p>Đang tải...</p>
     </div>
     <div id="top" style="position: absolute; top: 0;"></div>
-    <div class="left-silde">
-        <a href="#top"><img src="/images/APT-logo.png" alt="" class="left-silde__main-logo"></a>
-        <div class="left-side__menu">
-            <div class="menu__item" onclick="location.href='/home'"><i class="fa-regular fa-house"></i>Trang chủ</div>
-            <div class="menu__item" onclick="location.href='/profile'"><i class="fa-regular fa-user"></i>Trang cá nhân</div>
+    <div class="left-side">
+        <a href="#top"><img src="/images/APT-logo.png" alt="" class="left-side__main-logo"></a>
+        <div class="left-side__menu" onclick="location.href='/home'">
+            <div class="menu__item">
+                <i class="fa-regular fa-house"></i>
+                <p>Trang chủ</p>
+            </div>
+            <div class="menu__item --selected">
+                <i class="fa-regular fa-user"></i>
+                <p>Trang cá nhân</p>
+                
+            </div>
         </div>
     </div>
-    <div class="search-bar">
-        <input class="search-bar__input" type="search" placeholder="Tên đăng nhập">
-        <i class="fa-regular fa-magnifying-glass search-bar__icon"></i>
-        <div class="search-bar__result"></div>
+    <div class="search-container">
+        <div class="search__search-bar">
+            <i class="search-bar__icon fa-regular fa-magnifying-glass"></i>
+            <input class="search-bar__input" type="search" placeholder="Tên đăng nhập">
+        </div>
+        <div class="search__result"></div>
     </div>
     <div class="profile">
-        <div class="profile__full-name"><%= user.fullName %></div>
+        <div class="profile__head">
+            <div class="head__full-name"><%= user.fullName %></div>
+            <div class="head__username">(<%= user.username %>)</div>
+        </div>
     </div>
     <div class="feed --profile-feed">
         <% for (let i = posts.length - 1; i >= 0; i--) { %>
@@ -38,10 +50,10 @@
                     <div class="head__auth-name"><%= user.username %></div>
                 </div>
                 <div class="post__time"><%= posts[i].time %></div>
-                <div class="post__content"><%= posts[i].content %></div>
                 <img class="post__photo" src="<%= posts[i].photoUrl %>" alt="">
                 <i class="<%= currentUser.postsLiked.includes(posts[i]._id)?'fa-solid':'fa-regular' %> fa-heart post__react" onclick="likePost(this)"></i>
                 <p class="post__no-like"><%= posts[i].noLike %> lượt thích</p>
+                <div class="post__content"><%= posts[i].content %></div>
             </div>
         <% } %>
     </div>

@@ -1,13 +1,13 @@
-.left-silde {
+.left-side {
     position: fixed;
     left: 0;
     width: 20vw;
     height: 100%;
     padding: 8px 12px;
-    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.left-silde__main-logo {
+.left-side__main-logo {
     width: 58px;
     margin: 30px;
 }
@@ -17,11 +17,12 @@
 }
 
 .menu__item {
-    border-radius: 8px;
     padding: 12px;
     margin: 4px 0;
     cursor: pointer;
+    border-radius: 8px;
     transition: background 0.2s;
+    display: flex;
 }
 
 .menu__item i {
@@ -34,7 +35,7 @@
     background: rgba(0, 0, 0, 0.04);
 }
 
-.--selected,
+.--selected p,
 .--selected i {
     font-weight: 600;
 }
@@ -70,8 +71,7 @@
     width: 100%;
     height: 36px;
     padding: 0 4px;
-    margin-top: 38px;
-    border-radius: 4px;
+    margin-top: 30px;
     background: #efefef;
     display: flex;
     justify-content: space-between;
@@ -126,7 +126,7 @@
     width: 32vw;
     padding: 30px 0;
     background: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
@@ -140,7 +140,7 @@
 
 .head__username {
     margin-left: 6px;
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 .head__log-out-btn {
@@ -150,11 +150,7 @@
 }
 
 .create-post {
-    margin-top: 16px;
-}
-
-.post__title {
-    font-weight: 600;
+    margin-top: 6px;
 }
 
 .post__content-reader {
@@ -208,8 +204,8 @@
 }
 
 .post__photo-reader {
+    margin-bottom: 12px;
     cursor: pointer;
-    margin: 12px 0;
 }
 
 .post__photo-reader i {
@@ -247,7 +243,7 @@ input[name=photo] {
 .feed__post {
     width: 100%;
     margin-bottom: 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .post__head {
@@ -302,4 +298,33 @@ input[name=photo] {
 .post__content {
     word-wrap: break-word;
     margin-bottom: 12px;
+}
+
+@media only screen and (max-width: 1080px) {
+    .left-side {
+        width: 10vw;
+        padding: 0;
+    }
+
+    .left-side__main-logo {
+        position: absolute;
+        top: 0;
+        width: 60%;
+        margin-left: calc(5vw - 30%);
+
+    }
+
+    .left-side__menu {
+        position: absolute;
+        bottom: 2vh;
+        width: 100%;
+    }
+
+    .menu__item {
+        justify-content: center;
+    }
+
+    .menu__item p {
+        display: none;
+    }
 }

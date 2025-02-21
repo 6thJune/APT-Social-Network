@@ -16,12 +16,18 @@
         <p>Đang tải...</p>
     </div>
     <div id="top" style="position: absolute; top: 0;"></div>
-    <div class="left-silde">
-        <a href="#top"><img src="/images/APT-logo.png" alt="" class="left-silde__main-logo"></a>
-        <div class="left-side__menu">
-            <div class="menu__item" onclick="location.href='/home'"><i class="fa-regular fa-house"></i>Trang chủ</div>
-            <div class="menu__item --selected"><i class="fa-regular fa-user"></i>Trang cá nhân</div>
-            <div class="menu__item"><i class="fa-regular fa-gear"></i>Cài đặt</div>
+    <div class="left-side">
+        <a href="#top"><img src="/images/APT-logo.png" alt="" class="left-side__main-logo"></a>
+        <div class="left-side__menu" onclick="location.href='/home'">
+            <div class="menu__item">
+                <i class="fa-regular fa-house"></i>
+                <p>Trang chủ</p>
+            </div>
+            <div class="menu__item --selected">
+                <i class="fa-regular fa-user"></i>
+                <p>Trang cá nhân</p>
+                
+            </div>
         </div>
     </div>
     <div class="search-container">
@@ -38,7 +44,6 @@
             <div class="head__log-out-btn" onclick="window.location.href='/'">Đăng xuất</div>
         </div>
         <div class="create-post">
-            <p class="post__title">Bài viết của bạn</p>
             <textarea class="post__content-reader" placeholder="Bạn đang nghĩ gì?"></textarea>
             <div class="post__photo-preview">
                 <img src="" alt="" class="photo-preview__thumbnail">
