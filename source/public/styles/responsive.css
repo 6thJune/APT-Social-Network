@@ -26,6 +26,10 @@
         display: none;
     }
 
+    .feed-empty-message-title {
+        padding-top: 30vh;
+    }
+
     .search-container {
         width: 50vw;
         height: auto;
@@ -90,6 +94,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .feed-empty-message-title {
+        padding-top: 30vh;
     }
 
     .search-container {
