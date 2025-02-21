@@ -42,7 +42,7 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 99;
+  z-index: 99999;
   background: #fff;
   display: none;
   flex-direction: column;
