@@ -299,32 +299,3 @@ input[name=photo] {
     word-wrap: break-word;
     margin-bottom: 12px;
 }
-
-@media only screen and (max-width: 1080px) {
-    .left-side {
-        width: 10vw;
-        padding: 0;
-    }
-
-    .left-side__main-logo {
-        position: absolute;
-        top: 0;
-        width: 60%;
-        margin-left: calc(5vw - 30%);
-
-    }
-
-    .left-side__menu {
-        position: absolute;
-        bottom: 2vh;
-        width: 100%;
-    }
-
-    .menu__item {
-        justify-content: center;
-    }
-
-    .menu__item p {
-        display: none;
-    }
-}
