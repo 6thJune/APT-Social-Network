@@ -41,7 +41,7 @@
 }
 
 .feed-empty-message-title {
-    margin-top: 40vh;
+    padding-top: 40vh;
     text-align: center;
     font-size: 28px;
     opacity: 0.3;
