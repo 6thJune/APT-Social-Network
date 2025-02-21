@@ -45,9 +45,17 @@
         left: 25vw;
     }
 
+    .profile.--search-result {
+        position: relative;
+    }
+
     .feed {
         width: 50vw;
         left: 25vw;
+    }
+
+    .feed.--home-feed {
+        top: 10vh;
     }
 
     .feed.--home-feed {
@@ -92,8 +100,15 @@
     }
 
     .profile {
-        width: 90vw;
-        left: 5vw;
+        width: 100%;
+        left: 0;
+        top: 10vh;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .profile.--search-result {
+        padding-left: 20px;
     }
 
     .feed {

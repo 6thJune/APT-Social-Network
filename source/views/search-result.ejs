@@ -20,11 +20,11 @@
     <div class="left-side">
         <a href="#top"><img src="/images/APT-logo.png" alt="" class="left-side__main-logo"></a>
         <div class="left-side__menu" onclick="location.href='/home'">
-            <div class="menu__item">
+            <div class="menu__item --selected">
                 <i class="fa-regular fa-house"></i>
                 <p>Trang chủ</p>
             </div>
-            <div class="menu__item --selected">
+            <div class="menu__item">
                 <i class="fa-regular fa-user"></i>
                 <p>Trang cá nhân</p>
                 
@@ -38,13 +38,13 @@
         </div>
         <div class="search__result"></div>
     </div>
-    <div class="profile">
+    <div class="profile --search-result">
         <div class="profile__head">
             <div class="head__full-name"><%= user.fullName %></div>
             <div class="head__username">(<%= user.username %>)</div>
         </div>
     </div>
-    <div class="feed --profile-feed">
+    <div class="feed --search-feed">
         <% for (let i = posts.length - 1; i >= 0; i--) { %>
             <div class="feed__post" post-id="<%= posts[i]._id %>" post-noLike="<%= posts[i].noLike %>" >
                 <div class="post__head">

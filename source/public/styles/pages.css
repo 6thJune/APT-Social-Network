@@ -126,8 +126,13 @@
     width: 32vw;
     padding: 30px 0;
     background: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
     overflow: hidden;
+}
+
+.profile.--search-result {
+    position: fixed;
+    padding: 30px 0 12px 0;
 }
 
 .profile__head {
@@ -238,6 +243,10 @@ input[name=photo] {
     position: relative;
     left: 34vw;
     top: 30px;
+}
+
+.feed.--search-feed {
+    top: 80px;
 }
 
 .feed__post {
