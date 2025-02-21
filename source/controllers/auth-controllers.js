@@ -5,15 +5,12 @@ const User = require('../models/user');
 
 authController.post('/register', async (req, res) => {
     try {
-        const { fullName, email, username, password } = req.body;
+        const { fullName, username, password } = req.body;
         const existingUser = await User.findOne({ username });
-        const existingEmail = await User.findOne({ email });
-        if (existingEmail)
-            return res.status(400).json({ message: 'Email đã tồn tại!' })
         if (existingUser)
             return res.status(400).json({ message: 'Tên đăng nhập đã tồn tại!' })
         const hashedPassword = await bcrypt.hash(password, 10);
-        const user = new User({ fullName, email, username, password: hashedPassword });
+        const user = new User({ fullName, username, password: hashedPassword });
         await user.save();
         return res.status(201).json({ success: true, message: 'Đăng ký thành công! Chuyển đến đăng nhập!' })
     } catch (error) {
