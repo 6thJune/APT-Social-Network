@@ -104,15 +104,16 @@
 
     .title {
         margin: 0;
-        margin-top: auto;
+        margin-top: 12px;
     }
 
     .title__logo {
-        height: 50px;
+        height: 30px;
     }
 
     .title__description {
         margin: 0;
+        font-size: 12px;
     }
 
     .form {
