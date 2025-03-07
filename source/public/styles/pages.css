@@ -248,10 +248,10 @@ input[name=photo] {
 
 .warning {
     position: fixed;
-    top: 30vh;
-    left: 43vw;
+    top: 40vh;
+    left: 40vw;
     z-index: 9999;
-    width: 14vw;
+    width: 20vw;
     background: var(--background-color);
     border: 1px solid var(--border-color);
     display: none;

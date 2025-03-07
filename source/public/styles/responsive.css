@@ -50,6 +50,10 @@
         padding: 12px;
     }
 
+    .menu__item.--theme i {
+        margin: 0;
+    }
+
     .feed-empty-message-title {
         padding-top: 30vh;
     }
@@ -69,7 +73,7 @@
 
     .warning {
         width: 30vw;
-        left: 35vw;
+        left: 40vw;
     }
 
     .profile {
