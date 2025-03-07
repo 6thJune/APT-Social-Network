@@ -22,7 +22,6 @@ searchBar.addEventListener('input', async () => {
         body: JSON.stringify({ searchContent })
     })
     const result = await res.json();
-    console.log(result.result);
     if (result.result.length != 0) {
         searchResult.innerHTML = '';
         result.result.forEach(u => {
@@ -40,4 +39,20 @@ searchBar.addEventListener('input', async () => {
     }
     else
         searchResult.innerHTML = '';
+})
+// change theme
+const themeChanger = document.querySelector('.menu__item.--theme');
+themeChanger.addEventListener('click', async () => {
+    const getRes = await fetch('/get-theme')
+    const getResult = await getRes.json();
+    let themeStatus = getResult.theme;
+
+    const changeRes = await fetch('/change-theme', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ themeStatus })
+    });
+    const changeResult = await changeRes.json();
+    if (changeResult.success)
+        location.reload();
 })

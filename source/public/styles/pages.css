@@ -4,7 +4,7 @@
     width: 20vw;
     height: 100%;
     padding: 8px 12px;
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid var(--border-color);
 }
 
 .left-side__main-logo {
@@ -19,10 +19,10 @@
 .menu__item {
     padding: 12px;
     margin: 4px 0;
-    cursor: pointer;
     border-radius: 8px;
     transition: background 0.2s;
     display: flex;
+    cursor: pointer;
 }
 
 .menu__item i {
@@ -31,8 +31,16 @@
     text-align: center;
 }
 
+.menu__item.--theme {
+    padding: 12px 30px;
+}
+
+.menu__item.--theme i {
+    margin-left: auto;
+}
+
 .menu__item:hover {
-    background: rgba(0, 0, 0, 0.04);
+    background: var(--border-color);
 }
 
 .--selected p,
@@ -72,7 +80,7 @@
     height: 36px;
     padding: 0 4px;
     margin-top: 30px;
-    background: #efefef;
+    background: var(--input-background-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -80,7 +88,7 @@
 
 .search-bar__input {
     width: 90%;
-    background: #efefef;
+    background: var(--input-background-color);
     border: none;
     outline: none;
 }
@@ -88,7 +96,7 @@
 .search-bar__icon {
     width: 10%;
     text-align: center;
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--font-color);
 }
 
 .search__result {
@@ -105,7 +113,7 @@
 }
 
 .result__item:hover {
-    background: rgba(0, 0, 0, 0.04);
+    background: var(--border-color);
     cursor: pointer;
 }
 
@@ -125,8 +133,8 @@
     z-index: 9;
     width: 32vw;
     padding: 30px 0;
-    background: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
     overflow: hidden;
 }
 
@@ -163,7 +171,7 @@
     height: 96px;
     padding: 6px 10px;
     margin: 12px 0;
-    background: #efefef;
+    background: var(--input-background-color);
     border-radius: 4px;
     border: none;
     outline: none;
@@ -238,6 +246,50 @@ input[name=photo] {
     cursor: pointer;
 }
 
+.warning {
+    position: fixed;
+    top: 30vh;
+    left: 43vw;
+    z-index: 9999;
+    width: 14vw;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.warning__message {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.warning__deny {
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    border: none;
+    background: none;
+    color: red;
+    transition: background 0.2s;
+}
+
+.warning__accept {
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.warning button:hover {
+    background: var(--border-color);
+    cursor: pointer;
+}
+
 .feed {
     width: 32vw;
     position: relative;
@@ -252,7 +304,7 @@ input[name=photo] {
 .feed__post {
     width: 100%;
     margin-bottom: 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .post__head {
@@ -291,20 +343,16 @@ input[name=photo] {
     transition: color 0.2s;
 }
 
-.post__react:hover {
-    color: rgba(0, 0, 0, 0.4);
-}
-
 .fa-solid.fa-heart {
     color: red;
 }
 
 .post__no-like {
     font-weight: 600;
-    margin: 6px 0;
+    margin: 12px 0;
 }
 
 .post__content {
     word-wrap: break-word;
-    margin-bottom: 12px;
+    margin-top: 12px;
 }

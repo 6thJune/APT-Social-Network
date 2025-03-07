@@ -6,6 +6,8 @@
   --logo-color: rgb(0, 51, 131);
   --font-color: #000;
   --background-color: #fff;
+  --input-background-color: #eee;
+  --border-color: rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -20,6 +22,22 @@
 html {
   background-color: var(--background-color);
   scroll-behavior: smooth;
+}
+
+html.dark {
+  --background-color: #1c1c1d;
+  --font-color: #fff;
+  --input-background-color: #333334;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+html.dark .left-side__main-logo {
+  filter: brightness(3);
+}
+
+html.dark .fa-image,
+html.dark .post__post-btn {
+  filter: brightness(1.5);
 }
 
 ::-webkit-scrollbar {

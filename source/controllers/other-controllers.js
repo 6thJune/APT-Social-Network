@@ -23,4 +23,25 @@ otherController.post('/search', async (req, res) => {
     }
 })
 
+otherController.get('/get-theme', (req, res) => {
+    try {
+        return res.status(201).json({ theme: req.session.theme });
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
+})
+
+otherController.post('/change-theme', (req, res) => {
+    try {
+        const { themeStatus } = req.body;
+        if (themeStatus)
+            req.session.theme = 0;
+        else
+            req.session.theme = 1;
+        return res.status(201).json({ success: true });
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
+})
+
 module.exports = otherController;
