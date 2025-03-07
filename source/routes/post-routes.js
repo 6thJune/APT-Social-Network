@@ -8,7 +8,7 @@ router.get('/home', async (req, res) => {
         const token = req.session.token;
         const theme = req.session.theme;
         if (!token)
-            return;
+            return res.render('login');
         const currentUser = await User.findById(token);
         const allPost = await Post.find({});
         res.render('home', { currentUser: currentUser, posts: allPost, theme: theme });
@@ -22,7 +22,7 @@ router.get('/profile', async (req, res) => {
         const token = req.session.token;
         const theme = req.session.theme;
         if (!token)
-            return;
+            return res.render('login');
         const currentUser = await User.findById(token);
         const username = currentUser.username;
         const postOfUser = await Post.find({ username });
