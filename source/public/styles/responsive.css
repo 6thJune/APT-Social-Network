@@ -16,7 +16,7 @@
     }
 
     #page-loader img {
-        width: 8%;
+        width: 10%;
     }
 
     .left-side {
@@ -150,6 +150,10 @@
 
     .form {
         width: 70%;
+    }
+
+    #page-loader img {
+        width: 20%;
     }
 
     .left-side {
